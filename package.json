@@ -1,0 +1,21 @@
+{
+  "name": "delegatorraffle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gather": "ts-node src/gather.ts",
+    "pick": "ts-node src/pick.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Le (github: tvl83)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.1.3",
+    "dotenv": "^16.0.3",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10"
+  }
+}
