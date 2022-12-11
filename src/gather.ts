@@ -1,5 +1,4 @@
 import axios from "axios";
-
 require('dotenv').config();
 const fs = require("fs");
 
@@ -18,6 +17,9 @@ const DELEGATORS_FILE = "./data/delegators.json";
 const blacklist = [
   "juno14gsr8wml7v28vmthx9e3qqtp0zq0eugx7fudcr",
 ];
+
+// This is the divisor applied to the amount of delegated tokens to determine the number of tickets
+const ENTRY_WEIGHT = 10;
 
 async function dataGatherer() {
   // chose random API_URLS index
@@ -64,9 +66,8 @@ dataGatherer()
 
 function countEntries(delegator: any) {
   let entries = 0;
-  // add to entries for every 10 juno delegated
-  entries += Math.floor(delegator.amount / 10);
-
+  // add to entries for every ENTRY_WEIGHT juno delegated
+  entries += Math.floor(delegator.amount / ENTRY_WEIGHT);
   return entries;
 }
 

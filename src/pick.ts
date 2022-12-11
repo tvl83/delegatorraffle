@@ -1,10 +1,7 @@
 const fs = require("fs");
-
 const args = require('yargs').argv;
-
 // this is the file where the delegators are saved
 const DELEGATORS_FILE = "./data/delegators.json";
-
 const PICKS = args['winners'] || 1;
 
 async function drawingPicker() {
