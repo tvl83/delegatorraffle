@@ -14,7 +14,7 @@ const API_URLS = [
 const DELEGATORS_FILE = "./data/delegators.json";
 
 // add to this blacklist to remove addresses from the list
-const blacklist = [
+const blacklist:any[] = [
   "juno14gsr8wml7v28vmthx9e3qqtp0zq0eugx7fudcr",
 ];
 
@@ -26,7 +26,7 @@ async function dataGatherer() {
   let randomIndex = Math.floor(Math.random() * API_URLS.length);
   console.log(`using API_URLS[${randomIndex}]: ${API_URLS[randomIndex]}`);
 
-  let url = `${API_URLS[randomIndex]}/cosmos/staking/v1beta1/validators/${JUNO_VALIDATOR}/delegations`;
+  let url = `${API_URLS[randomIndex]}/cosmos/staking/v1beta1/validators/${JUNO_VALIDATOR}/delegations?pagination.limit=1000`;
 
   console.log(`url: ${url}`);
 
